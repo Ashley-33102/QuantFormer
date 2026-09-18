@@ -1,0 +1,63 @@
+{
+  "configuration": {
+    "n_train": 8000,
+    "batch_size": 32,
+    "tokens_per_sample": 225,
+    "k_dim": 20,
+    "n_classes": 16,
+    "epochs": 50,
+    "total_runs": 117,
+    "warmup": 5,
+    "timed_iterations": 30,
+    "n_qubits": 4,
+    "entangling_layers": 2,
+    "d_model": 64,
+    "d_ff": 128,
+    "attention_heads": 4
+  },
+  "correctness": {
+    "batched_execution": {
+      "status": "PASS",
+      "backend": "lightning.qubit",
+      "diff_method": "adjoint",
+      "batch_size": 32,
+      "tokens_per_sample": 225,
+      "total_token_vectors": 7200,
+      "intercepted_executions": 1
+    },
+    "gradcheck": {
+      "status": "PASS",
+      "backend": "lightning.qubit",
+      "diff_method": "adjoint"
+    }
+  },
+  "benchmarks": {
+    "default_qubit": {
+      "backend": "default.qubit",
+      "diff_method": "backprop",
+      "status": "completed",
+      "seconds_per_batch": 0.0950159633338141
+    },
+    "lightning_qubit": {
+      "backend": "lightning.qubit",
+      "diff_method": "adjoint",
+      "status": "aborted_excessively_slow",
+      "seconds_per_batch": null
+    },
+    "lightning_gpu": {
+      "backend": "lightning.gpu",
+      "diff_method": "adjoint",
+      "status": "unavailable",
+      "error": "Backend 'lightning.gpu' unavailable."
+    }
+  },
+  "extrapolation": {
+    "batches_per_epoch": 250,
+    "batches_per_run": 12500,
+    "seconds_per_batch": 0.0950159633338141,
+    "seconds_per_run": 1187.699541672676,
+    "hours_per_run": 0.32991653935352117,
+    "total_hours_117_runs": 38.60023510436198,
+    "total_days_117_runs": 1.6083431293484158
+  }
+}

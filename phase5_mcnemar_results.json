@@ -1,0 +1,292 @@
+{
+  "IndianPines": {
+    "w/o QNN": {
+      "per_seed_pvalues": [
+        1.0864625004392664e-28,
+        6.791502824013128e-15,
+        2.011574923909826e-12
+      ],
+      "bh_corrected_pvalues": [
+        1.0864625004392664e-28,
+        9.05533709868417e-15,
+        2.011574923909826e-12
+      ],
+      "combined_pvalue": 1.5377535426365824e-50,
+      "significant": true
+    },
+    "w/o Bottleneck": {
+      "per_seed_pvalues": [
+        2.0851361384444105e-111,
+        1.408156340012758e-74,
+        2.3996702832583593e-96
+      ],
+      "bh_corrected_pvalues": [
+        4.170272276888821e-111,
+        2.816312680025516e-74,
+        4.799340566516719e-96
+      ],
+      "combined_pvalue": 1.1688593343884286e-274,
+      "significant": true
+    },
+    "w/o PosEnc": {
+      "per_seed_pvalues": [
+        1.077189893955258e-38,
+        0.0007450773590443267,
+        1.4713766950608267e-31
+      ],
+      "bh_corrected_pvalues": [
+        1.436253191940344e-38,
+        0.0007450773590443267,
+        1.9618355934144357e-31
+      ],
+      "combined_pvalue": 2.8942070753566253e-68,
+      "significant": true
+    },
+    "1-Qubit": {
+      "per_seed_pvalues": [
+        1e-300,
+        1e-300,
+        4.814949094061676e-156
+      ],
+      "bh_corrected_pvalues": [
+        4e-300,
+        4e-300,
+        1.9259796376246703e-155
+      ],
+      "combined_pvalue": 0.0,
+      "significant": true
+    }
+  },
+  "PaviaUniversity": {
+    "w/o QNN": {
+      "per_seed_pvalues": [
+        5.538810647081161e-12,
+        1.1848084058320268e-18,
+        0.35980480492542966
+      ],
+      "bh_corrected_pvalues": [
+        7.38508086277488e-12,
+        1.579744541109369e-18,
+        0.35980480492542966
+      ],
+      "combined_pvalue": 9.891542563784047e-27,
+      "significant": true
+    },
+    "w/o Bottleneck": {
+      "per_seed_pvalues": [
+        3.130623798651905e-54,
+        0.11553680316775626,
+        0.0007739485407408828
+      ],
+      "bh_corrected_pvalues": [
+        6.26124759730381e-54,
+        0.11553680316775626,
+        0.0010319313876545105
+      ],
+      "combined_pvalue": 6.55720514944733e-54,
+      "significant": true
+    },
+    "w/o PosEnc": {
+      "per_seed_pvalues": [
+        1.0,
+        3.321982534453773e-48,
+        3.9849592092959095e-24
+      ],
+      "bh_corrected_pvalues": [
+        1.0,
+        6.643965068907546e-48,
+        7.969918418591819e-24
+      ],
+      "combined_pvalue": 7.018846287261267e-67,
+      "significant": true
+    },
+    "1-Qubit": {
+      "per_seed_pvalues": [
+        1e-300,
+        1e-300,
+        1e-300
+      ],
+      "bh_corrected_pvalues": [
+        4e-300,
+        4e-300,
+        4e-300
+      ],
+      "combined_pvalue": 0.0,
+      "significant": true
+    }
+  },
+  "Salinas": {
+    "w/o QNN": {
+      "per_seed_pvalues": [
+        0.02697566414210417,
+        5.3439506684758394e-34,
+        5.5393454192927676e-05
+      ],
+      "bh_corrected_pvalues": [
+        0.02697566414210417,
+        1.0687901336951679e-33,
+        7.385793892390357e-05
+      ],
+      "combined_pvalue": 8.633844569209222e-36,
+      "significant": true
+    },
+    "w/o Bottleneck": {
+      "per_seed_pvalues": [
+        4.747098149397006e-19,
+        1.6347911943225021e-06,
+        1.0470077358195634e-08
+      ],
+      "bh_corrected_pvalues": [
+        9.494196298794013e-19,
+        2.1797215924300027e-06,
+        2.0940154716391268e-08
+      ],
+      "combined_pvalue": 1.1617327743020093e-28,
+      "significant": true
+    },
+    "w/o PosEnc": {
+      "per_seed_pvalues": [
+        1.3398902654368198e-15,
+        6.176478757935272e-06,
+        0.13271243627566648
+      ],
+      "bh_corrected_pvalues": [
+        1.7865203539157596e-15,
+        6.176478757935272e-06,
+        0.13271243627566648
+      ],
+      "combined_pvalue": 1.756799345307772e-18,
+      "significant": true
+    },
+    "1-Qubit": {
+      "per_seed_pvalues": [
+        1e-300,
+        1e-300,
+        1e-300
+      ],
+      "bh_corrected_pvalues": [
+        4e-300,
+        4e-300,
+        4e-300
+      ],
+      "combined_pvalue": 0.0,
+      "significant": true
+    }
+  },
+  "KSC": {
+    "w/o QNN": {
+      "per_seed_pvalues": [
+        6.992542159171162e-05,
+        0.07267036753477295,
+        0.6177608638622449
+      ],
+      "bh_corrected_pvalues": [
+        6.992542159171162e-05,
+        0.07267036753477295,
+        0.6177608638622449
+      ],
+      "combined_pvalue": 0.00029494165975799846,
+      "significant": true
+    },
+    "w/o Bottleneck": {
+      "per_seed_pvalues": [
+        2.003586066435162e-10,
+        0.012865581294556097,
+        2.37194038814192e-23
+      ],
+      "bh_corrected_pvalues": [
+        4.007172132870324e-10,
+        0.017154108392741462,
+        4.74388077628384e-23
+      ],
+      "combined_pvalue": 9.948293971276421e-31,
+      "significant": true
+    },
+    "w/o PosEnc": {
+      "per_seed_pvalues": [
+        6.420042962722598e-10,
+        1.1418733657501359e-09,
+        7.598370714429809e-13
+      ],
+      "bh_corrected_pvalues": [
+        8.56005728363013e-10,
+        2.2837467315002718e-09,
+        1.0131160952573079e-12
+      ],
+      "combined_pvalue": 4.769689816884837e-27,
+      "significant": true
+    },
+    "1-Qubit": {
+      "per_seed_pvalues": [
+        3.366811356547906e-102,
+        4.082837426913923e-109,
+        5.826806912750013e-129
+      ],
+      "bh_corrected_pvalues": [
+        1.3467245426191624e-101,
+        1.6331349707655691e-108,
+        2.3307227651000053e-128
+      ],
+      "combined_pvalue": 0.0,
+      "significant": true
+    }
+  },
+  "Botswana": {
+    "w/o QNN": {
+      "per_seed_pvalues": [
+        0.5701877750903487,
+        0.14491278074671443,
+        0.02099522157995492
+      ],
+      "bh_corrected_pvalues": [
+        0.5701877750903487,
+        0.14491278074671443,
+        0.02099522157995492
+      ],
+      "combined_pvalue": 0.047813716011735834,
+      "significant": true
+    },
+    "w/o Bottleneck": {
+      "per_seed_pvalues": [
+        4.675011517049424e-05,
+        1.471121127529202e-07,
+        5.500394517867688e-12
+      ],
+      "bh_corrected_pvalues": [
+        9.350023034098848e-05,
+        2.942242255058404e-07,
+        1.1000789035735376e-11
+      ],
+      "combined_pvalue": 3.868022810044725e-19,
+      "significant": true
+    },
+    "w/o PosEnc": {
+      "per_seed_pvalues": [
+        0.00025962847995775846,
+        3.5635085719492136e-07,
+        1.5803810075577803e-06
+      ],
+      "bh_corrected_pvalues": [
+        0.00034617130661034463,
+        4.7513447625989515e-07,
+        2.107174676743707e-06
+      ],
+      "combined_pvalue": 2.3228792816223517e-13,
+      "significant": true
+    },
+    "1-Qubit": {
+      "per_seed_pvalues": [
+        1.0779183917794004e-90,
+        1.50329433173692e-83,
+        3.9913205967809846e-89
+      ],
+      "bh_corrected_pvalues": [
+        4.311673567117602e-90,
+        6.01317732694768e-83,
+        1.5965282387123938e-88
+      ],
+      "combined_pvalue": 7.407393946395831e-255,
+      "significant": true
+    }
+  }
+}

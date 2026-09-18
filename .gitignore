@@ -1,0 +1,33 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Local datasets
+data/
+datasets/
+*.mat
+
+# Local environments
+.conda/
+venv/
+env/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.vscode/
+
+# Temporary files
+*.tmp
+*.log
+
+# Large generated datasets
+preprocessed/
+
+# Large generated prediction files
+phase5_ablation_predictions.json
+phase6_houston15_predictions.json

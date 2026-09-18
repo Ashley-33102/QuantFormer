@@ -1,0 +1,26 @@
+{
+  "IndianPines": {
+    "quantum": {
+      "silhouette": 0.1732669621706009,
+      "fisher_ratio": 3.1750510651533714,
+      "linear_probe_acc": 0.9335365853658537
+    },
+    "classical": {
+      "silhouette": 0.19873787462711334,
+      "fisher_ratio": 3.1753175191246505,
+      "linear_probe_acc": 0.9524390243902439
+    }
+  },
+  "PaviaUniversity": {
+    "quantum": {
+      "silhouette": 0.43396010994911194,
+      "fisher_ratio": 4.972496786352904,
+      "linear_probe_acc": 0.9918188458728999
+    },
+    "classical": {
+      "silhouette": 0.3911365866661072,
+      "fisher_ratio": 4.360542704147898,
+      "linear_probe_acc": 0.9969320672023375
+    }
+  }
+}

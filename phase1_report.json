@@ -1,0 +1,69 @@
+{
+  "IndianPines": {
+    "n_train": 1024,
+    "n_val": 1025,
+    "n_test": 8200,
+    "k_used": 31,
+    "k_natural": 31,
+    "k_flagged": false,
+    "n_classes": 16,
+    "padding": "zero",
+    "fidelity_checkpoint": true
+  },
+  "PaviaUniversity": {
+    "n_train": 4277,
+    "n_val": 4277,
+    "n_test": 34222,
+    "k_used": 10,
+    "k_natural": 4,
+    "k_flagged": true,
+    "n_classes": 9,
+    "padding": "zero",
+    "fidelity_checkpoint": true
+  },
+  "Salinas": {
+    "n_train": 5412,
+    "n_val": 5413,
+    "n_test": 43304,
+    "k_used": 10,
+    "k_natural": 4,
+    "k_flagged": true,
+    "n_classes": 16,
+    "padding": "reflect",
+    "fidelity_checkpoint": false
+  },
+  "KSC": {
+    "n_train": 521,
+    "n_val": 521,
+    "n_test": 4169,
+    "k_used": 10,
+    "k_natural": 4,
+    "k_flagged": true,
+    "n_classes": 13,
+    "padding": "reflect",
+    "fidelity_checkpoint": false
+  },
+  "Botswana": {
+    "n_train": 324,
+    "n_val": 324,
+    "n_test": 2600,
+    "k_used": 10,
+    "k_natural": 4,
+    "k_flagged": true,
+    "n_classes": 14,
+    "padding": "reflect",
+    "fidelity_checkpoint": false
+  },
+  "Houston2013_Full15": {
+    "n_train": 2535,
+    "n_val": 282,
+    "n_test": 12182,
+    "k_used": 10,
+    "k_natural": 4,
+    "k_flagged": true,
+    "n_classes": 15,
+    "padding": "reflect",
+    "fidelity_checkpoint": false,
+    "split_type": "official_DFC2013_partition"
+  }
+}
