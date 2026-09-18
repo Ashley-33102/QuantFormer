@@ -6,15 +6,29 @@
 
 
 
-QuantFormer is a \*\*hybrid quantum-classical Transformer\*\* for hyperspectral image (HSI) classification. The project investigates the integration of a compact parameterized quantum circuit into a Transformer-based classification pipeline and evaluates the resulting model across multiple hyperspectral benchmarks.
+A hybrid quantum-classical Transformer for hyperspectral image classification, evaluated across six benchmark datasets with reproducibility experiments, ablation studies, statistical testing, and full-scene analysis.
 
 
 
-The experimental workflow covers architecture validation, preprocessing, benchmark reproduction, cross-dataset evaluation, augmentation analysis, ablation studies, statistical testing, full-scene inference, and feature-separability analysis.
+<p align="center">
 
 
 
-> \*\*Project status:\*\* Experimental pipeline completed across six HSI datasets, with quantitative results, visualizations, statistical analyses, and extracted artifacts preserved in the repository.
+!\[Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge\\\&logo=python\\\&logoColor=white)
+
+!\[PyTorch](https://img.shields.io/badge/PyTorch-2.5.0-EE4C2C?style=for-the-badge\\\&logo=pytorch\\\&logoColor=white)
+
+!\[PennyLane](https://img.shields.io/badge/PennyLane-0.42.3-6C4CC5?style=for-the-badge\\\&logo=pennylane\\\&logoColor=white)
+
+!\[NumPy](https://img.shields.io/badge/NumPy-Scientific%20Computing-013243?style=for-the-badge\\\&logo=numpy\\\&logoColor=white)
+
+!\[scikit-learn](https://img.shields.io/badge/scikit--learn-ML-F7931E?style=for-the-badge\\\&logo=scikit-learn\\\&logoColor=white)
+
+!\[Jupyter](https://img.shields.io/badge/Jupyter-Notebooks-F37626?style=for-the-badge\\\&logo=jupyter\\\&logoColor=white)
+
+
+
+</p>
 
 
 
@@ -26,11 +40,7 @@ The experimental workflow covers architecture validation, preprocessing, benchma
 
 
 
-Hyperspectral images contain hundreds of spectral bands, providing rich information for distinguishing land-cover classes. However, their high dimensionality, limited labeled samples, and strong spectral-spatial correlations make classification challenging.
-
-
-
-QuantFormer explores whether a \*\*small quantum computational component\*\* can be integrated into a Transformer architecture while maintaining a compact overall parameter count.
+\*\*QuantFormer\*\* explores a hybrid quantum-classical Transformer architecture for hyperspectral image classification.
 
 
 
@@ -38,23 +48,21 @@ The model combines:
 
 
 
-\* Spectral-spatial HSI representations
+\* Spatial tokenization of hyperspectral image patches
 
-\* Transformer-based feature processing
-
-\* Multi-head self-attention
+\* Transformer-based feature representation
 
 \* A parameterized quantum circuit
 
-\* Classical neural network components
+\* Quantum-enhanced feature transformation
 
-\* Multi-dataset evaluation
+\* Classical classification layers
 
-\* Statistical and ablation analysis
+\* Multi-seed evaluation for reproducibility
 
 
 
-The quantum component is evaluated using \*\*simulated quantum backends\*\*, rather than physical quantum hardware.
+The complete experimental pipeline covers model validation, dataset preprocessing, reproduction experiments, cross-dataset evaluation, augmentation analysis, ablation studies, statistical testing, full-scene classification, and metric extraction.
 
 
 
@@ -62,39 +70,95 @@ The quantum component is evaluated using \*\*simulated quantum backends\*\*, rat
 
 
 
-\## Model Configuration
+\## Key Specifications
 
 
 
-| Component              |                        Configuration |
+| Component              | Configuration                        |
 
-| ---------------------- | -----------------------------------: |
+| ---------------------- | ------------------------------------ |
 
 | Architecture           | Hybrid Quantum-Classical Transformer |
 
-| Transformer Layers     |                                    2 |
+| Task                   | Hyperspectral Image Classification   |
 
-| Embedding Dimension    |                                   64 |
+| Transformer Layers     | 2                                    |
 
-| Feed-Forward Dimension |                                  128 |
+| Embedding Dimension    | 64                                   |
 
-| Attention Heads        |                                    4 |
+| Feed-Forward Dimension | 128                                  |
 
-| Spatial Window         |                              15 × 15 |
+| Attention Heads        | 4                                    |
 
-| Spatial Tokens         |                                  225 |
+| Spatial Window         | 15 × 15                              |
 
-| Quantum Qubits         |                                    4 |
+| Spatial Tokens         | 225                                  |
 
-| Quantum Layers         |                                    2 |
+| Quantum Qubits         | 4                                    |
 
-| Task                   |   Hyperspectral Image Classification |
+| Quantum Layers         | 2                                    |
 
-| Evaluation Seeds       |                           42, 43, 44 |
+| Evaluation Seeds       | 42, 43, 44                           |
+
+| Framework              | PyTorch + PennyLane                  |
+
+| Quantum Simulation     | `default.qubit`, `lightning.qubit`   |
 
 
 
-The quantum component is deliberately compact. Depending on the dataset configuration, the complete model contains approximately \*\*34–35K trainable parameters\*\*.
+\---
+
+
+
+\## Tech Stack
+
+
+
+\### Machine Learning \& Quantum Computing
+
+
+
+| Technology       | Purpose                                       |
+
+| ---------------- | --------------------------------------------- |
+
+| \*\*Python\*\*       | Core implementation                           |
+
+| \*\*PyTorch\*\*      | Neural network and Transformer implementation |
+
+| \*\*PennyLane\*\*    | Quantum machine learning integration          |
+
+| \*\*NumPy\*\*        | Numerical computation                         |
+
+| \*\*scikit-learn\*\* | Evaluation metrics and statistical analysis   |
+
+
+
+\### Experimentation \& Visualization
+
+
+
+| Technology             | Purpose                     |
+
+| ---------------------- | --------------------------- |
+
+| \*\*Jupyter Notebook\*\*   | Experimental pipeline       |
+
+| \*\*Matplotlib\*\*         | Visualization               |
+
+| \*\*t-SNE\*\*              | Feature-space visualization |
+
+| \*\*Confusion Matrices\*\* | Classification analysis     |
+
+| \*\*McNemar's Test\*\*     | Statistical comparison      |
+
+
+
+\### Hardware
+
+
+
+The experiments were developed and evaluated using an \*\*NVIDIA RTX A4500\*\* GPU for classical GPU computation.
 
 
 
@@ -106,63 +170,29 @@ The quantum component is deliberately compact. Depending on the dataset configur
 
 
 
-The project is organized into sequential experimental phases.
+The repository is organized into seven experimental phases.
 
 
 
-| Phase       | Experiment                                                                          |
+| Phase       | Experiment                                                 |
 
-| ----------- | ----------------------------------------------------------------------------------- |
+| ----------- | ---------------------------------------------------------- |
 
-| \*\*Phase 0\*\* | Architecture, tensor-shape, quantum execution, and gradient validation              |
+| \*\*Phase 0\*\* | Quantum component validation and batched execution testing |
 
-| \*\*Phase 1\*\* | Dataset preprocessing and standardized input preparation                            |
+| \*\*Phase 1\*\* | Dataset preprocessing and pipeline preparation             |
 
-| \*\*Phase 2\*\* | Indian Pines benchmark reproduction                                                 |
+| \*\*Phase 2\*\* | Indian Pines reproduction                                  |
 
-| \*\*Phase 3\*\* | Pavia University evaluation                                                         |
+| \*\*Phase 3\*\* | Pavia University reproduction                              |
 
-| \*\*Phase 4\*\* | Cross-dataset extension with Salinas, KSC, and Botswana                             |
+| \*\*Phase 4\*\* | Extension to Salinas, KSC, and Botswana                    |
 
-| \*\*Phase 5\*\* | Ablation study and statistical comparison                                           |
+| \*\*Phase 5\*\* | Ablation studies and statistical testing                   |
 
-| \*\*Phase 6\*\* | Houston 2013 full-scene evaluation                                                  |
+| \*\*Phase 6\*\* | Houston 2013 full-scene evaluation                         |
 
-| \*\*Phase 7\*\* | Full metrics, artifact extraction, feature visualization, and separability analysis |
-
-
-
-\---
-
-
-
-\## Datasets
-
-
-
-QuantFormer was evaluated across six hyperspectral benchmarks:
-
-
-
-| Dataset          | Classes | Evaluation                      |
-
-| ---------------- | ------: | ------------------------------- |
-
-| Indian Pines     |      16 | Multi-seed benchmark evaluation |
-
-| Pavia University |       9 | Multi-seed benchmark evaluation |
-
-| Salinas          |      16 | Multi-seed evaluation           |
-
-| KSC              |      13 | Multi-seed evaluation           |
-
-| Botswana         |      14 | Multi-seed evaluation           |
-
-| Houston 2013     |      15 | Full-scene evaluation           |
-
-
-
-The original datasets are \*\*not included\*\* in this repository. Dataset files and other large local preprocessing outputs are excluded through `.gitignore`.
+| \*\*Phase 7\*\* | Full metrics, artifacts, and feature-space analysis        |
 
 
 
@@ -170,63 +200,33 @@ The original datasets are \*\*not included\*\* in this repository. Dataset files
 
 
 
-\# Results
+\# Datasets
 
 
 
-\## Benchmark Performance
+QuantFormer was evaluated on six hyperspectral benchmark datasets.
 
 
 
-Results below are taken directly from the experiment result files stored in the repository.
+| Dataset              | Classes | Evaluation            |
+
+| -------------------- | ------: | --------------------- |
+
+| \*\*Indian Pines\*\*     |      16 | Patch classification  |
+
+| \*\*Pavia University\*\* |       9 | Patch classification  |
+
+| \*\*Salinas\*\*          |      16 | Patch classification  |
+
+| \*\*KSC\*\*              |      13 | Patch classification  |
+
+| \*\*Botswana\*\*         |      14 | Patch classification  |
+
+| \*\*Houston 2013\*\*     |      15 | Full-scene evaluation |
 
 
 
-\### Multi-seed benchmark results
-
-
-
-| Dataset              |                 OA |                 AA |           Cohen's κ |
-
-| -------------------- | -----------------: | -----------------: | ------------------: |
-
-| \*\*Indian Pines\*\*     | \*\*88.97% ± 0.93%\*\* | \*\*78.34% ± 2.57%\*\* | \*\*0.8742 ± 0.0106\*\* |
-
-| \*\*Pavia University\*\* | \*\*98.99% ± 0.42%\*\* | \*\*98.33% ± 0.51%\*\* | \*\*0.9865 ± 0.0056\*\* |
-
-
-
-For Pavia University, the recorded OA remained within \*\*1 percentage point across the three evaluation seeds\*\*.
-
-
-
-\### Cross-dataset extension
-
-
-
-The Phase 4 experiment evaluates the effect of augmentation across three additional datasets.
-
-
-
-| Dataset      | Setting     | Mean OA | Mean AA | Mean κ |
-
-| ------------ | ----------- | ------: | ------: | -----: |
-
-| \*\*Salinas\*\*  | Unaugmented |  99.26% |  99.48% | 0.9918 |
-
-| \*\*Salinas\*\*  | Augmented   |  98.90% |  98.98% | 0.9877 |
-
-| \*\*KSC\*\*      | Unaugmented |  96.48% |  94.23% | 0.9608 |
-
-| \*\*KSC\*\*      | Augmented   |  97.56% |  95.67% | 0.9729 |
-
-| \*\*Botswana\*\* | Unaugmented |  94.48% |  93.34% | 0.9402 |
-
-| \*\*Botswana\*\* | Augmented   |  96.08% |  95.19% | 0.9575 |
-
-
-
-The augmentation experiment therefore shows \*\*dataset-dependent effects\*\* rather than a uniform improvement across all benchmarks.
+> The original hyperspectral datasets are not included in this repository. Dataset files are excluded through `.gitignore`.
 
 
 
@@ -234,33 +234,27 @@ The augmentation experiment therefore shows \*\*dataset-dependent effects\*\* ra
 
 
 
-\## Full Metric Evaluation
+\# Benchmark Results
 
 
 
-Phase 7 additionally computes macro and weighted classification metrics.
+\## Indian Pines
 
 
 
-| Dataset          | Macro Precision | Macro Recall | Macro F1 | Balanced Accuracy |
-
-| ---------------- | --------------: | -----------: | -------: | ----------------: |
-
-| Indian Pines     |          84.42% |       78.35% |   80.11% |            78.35% |
-
-| Pavia University |          97.63% |       98.36% |   97.99% |            98.36% |
-
-| Salinas          |          99.58% |       99.55% |   99.57% |            99.55% |
-
-| KSC              |          95.78% |       96.30% |   95.93% |            96.30% |
-
-| Botswana         |          95.48% |       94.18% |   94.70% |            94.18% |
-
-| Houston 2013     |          74.42% |       75.66% |   73.93% |            75.66% |
+Results across three evaluation seeds.
 
 
 
-These metrics provide additional information about class imbalance and per-class behavior beyond overall accuracy.
+| Metric                |          Mean ± Std |
+
+| --------------------- | ------------------: |
+
+| Overall Accuracy (OA) |  \*\*88.97% ± 0.93%\*\* |
+
+| Average Accuracy (AA) |  \*\*78.34% ± 2.57%\*\* |
+
+| Cohen's Kappa         | \*\*0.8742 ± 0.0106\*\* |
 
 
 
@@ -268,33 +262,19 @@ These metrics provide additional information about class imbalance and per-class
 
 
 
-\## Parameter Count
+\## Pavia University
 
 
 
-The Phase 7 artifact extraction records the following parameter counts:
+| Metric                |          Mean ± Std |
 
+| --------------------- | ------------------: |
 
+| Overall Accuracy (OA) |  \*\*98.99% ± 0.42%\*\* |
 
-| Dataset          | Full Configuration | Classical Mirror | Difference |
+| Average Accuracy (AA) |  \*\*98.33% ± 0.51%\*\* |
 
-| ---------------- | -----------------: | ---------------: | ---------: |
-
-| Indian Pines     |             34,984 |           34,960 |         24 |
-
-| Pavia University |             34,445 |           34,421 |         24 |
-
-| Salinas          |             34,900 |           34,876 |         24 |
-
-| KSC              |             34,705 |           34,681 |         24 |
-
-| Botswana         |             34,770 |           34,746 |         24 |
-
-| Houston 2013     |             34,835 |           34,811 |         24 |
-
-
-
-The quantum configuration therefore introduces a very small parameter-count difference relative to the corresponding classical mirror configuration.
+| Cohen's Kappa         | \*\*0.9865 ± 0.0056\*\* |
 
 
 
@@ -302,33 +282,193 @@ The quantum configuration therefore introduces a very small parameter-count diff
 
 
 
-\## Recorded Inference Time
+\## Cross-Dataset Evaluation
 
 
 
-Phase 7 records approximately \*\*0.28–0.30 ms per sample\*\* under the evaluation environment:
+Mean results over three seeds.
 
 
 
-| Dataset          | Inference Time / Sample |
+| Dataset              |     OA |     AA |  Kappa |
 
-| ---------------- | ----------------------: |
+| -------------------- | -----: | -----: | -----: |
 
-| Indian Pines     |                0.298 ms |
+| \*\*Indian Pines\*\*     | 88.97% | 78.34% | 0.8742 |
 
-| Pavia University |                0.279 ms |
+| \*\*Pavia University\*\* | 98.99% | 98.33% | 0.9865 |
 
-| Salinas          |                0.277 ms |
+| \*\*Salinas\*\*          | 99.26% | 99.48% | 0.9918 |
 
-| KSC              |                0.280 ms |
+| \*\*KSC\*\*              | 96.48% | 94.23% | 0.9608 |
 
-| Botswana         |                0.278 ms |
-
-| Houston 2013     |                0.276 ms |
+| \*\*Botswana\*\*         | 94.48% | 93.34% | 0.9402 |
 
 
 
-These values are \*\*environment-specific measurements\*\*, not hardware-independent benchmarks.
+\---
+
+
+
+\# Augmentation Study
+
+
+
+The effect of data augmentation was evaluated on three additional datasets.
+
+
+
+| Dataset  | Setting              |     OA |     AA |  Kappa |
+
+| -------- | -------------------- | -----: | -----: | -----: |
+
+| Salinas  | Without Augmentation | 99.26% | 99.48% | 0.9918 |
+
+| Salinas  | With Augmentation    | 98.90% | 98.98% | 0.9877 |
+
+| KSC      | Without Augmentation | 96.48% | 94.23% | 0.9608 |
+
+| KSC      | With Augmentation    | 97.56% | 95.67% | 0.9729 |
+
+| Botswana | Without Augmentation | 94.48% | 93.34% | 0.9402 |
+
+| Botswana | With Augmentation    | 96.08% | 95.19% | 0.9575 |
+
+
+
+\---
+
+
+
+\# Detailed Classification Metrics
+
+
+
+Final extracted metrics from the evaluation pipeline.
+
+
+
+| Dataset          | Precision | Recall / Balanced Acc. |     F1 |
+
+| ---------------- | --------: | ---------------------: | -----: |
+
+| Indian Pines     |    0.8442 |                 0.7835 | 0.8011 |
+
+| Pavia University |    0.9763 |                 0.9836 | 0.9799 |
+
+| Salinas          |    0.9958 |                 0.9955 | 0.9957 |
+
+| KSC              |    0.9578 |                 0.9630 | 0.9593 |
+
+| Botswana         |    0.9548 |                 0.9418 | 0.9470 |
+
+| Houston 2013     |    0.7442 |                 0.7566 | 0.7393 |
+
+
+
+The metrics above use the final extracted evaluation configuration and should not be directly interpreted as identical to the multi-seed OA/AA/Kappa benchmark protocol.
+
+
+
+\---
+
+
+
+\# Model Size \& Inference
+
+
+
+The quantum and corresponding classical mirror architectures have nearly identical parameter counts.
+
+
+
+| Dataset          | QuantFormer Parameters | Classical Mirror |
+
+| ---------------- | ---------------------: | ---------------: |
+
+| Indian Pines     |                 34,984 |           34,960 |
+
+| Pavia University |                 34,445 |           34,421 |
+
+| Salinas          |                 34,900 |           34,876 |
+
+| KSC              |                 34,705 |           34,681 |
+
+| Botswana         |                 34,770 |           34,746 |
+
+| Houston 2013     |                 34,835 |           34,811 |
+
+
+
+The difference is \*\*24 parameters\*\* across the evaluated configurations.
+
+
+
+\### Approximate inference time
+
+
+
+| Dataset          | ms / sample |
+
+| ---------------- | ----------: |
+
+| Indian Pines     |       0.298 |
+
+| Pavia University |       0.279 |
+
+| Salinas          |       0.277 |
+
+| KSC              |       0.280 |
+
+| Botswana         |       0.278 |
+
+| Houston 2013     |       0.276 |
+
+
+
+> Inference times are environment-specific measurements and should not be interpreted as hardware-independent benchmarks.
+
+
+
+\---
+
+
+
+\# Quantum Component
+
+
+
+The quantum module uses a compact parameterized circuit integrated into the Transformer pipeline.
+
+
+
+\### Configuration
+
+
+
+```text
+
+Number of qubits      : 4
+
+Quantum layers        : 2
+
+Quantum backend       : PennyLane
+
+Available simulators  : default.qubit, lightning.qubit
+
+```
+
+
+
+A Phase 0 execution test verified batched quantum processing rather than executing an independent quantum circuit for every token.
+
+
+
+For a test containing \*\*7,200 token vectors\*\*, the implementation produced \*\*one intercepted quantum execution call\*\* with first-order derivatives enabled.
+
+
+
+This validation was used to verify the intended batched execution design.
 
 
 
@@ -340,7 +480,7 @@ These values are \*\*environment-specific measurements\*\*, not hardware-indepen
 
 
 
-The repository contains generated figures for qualitative and quantitative inspection.
+The repository contains generated visualizations for the major experiments.
 
 
 
@@ -348,17 +488,23 @@ The repository contains generated figures for qualitative and quantitative inspe
 
 
 
-\* Indian Pines
+```text
 
-\* Pavia University
+figures/
 
-\* Salinas
+├── classmap\_botswana\_full.png
 
-\* KSC
+├── classmap\_houston2013\_full15\_full.png
 
-\* Botswana
+├── classmap\_indianpines\_full.png
 
-\* Houston 2013
+├── classmap\_ksc\_full.png
+
+├── classmap\_paviauniversity\_full.png
+
+└── classmap\_salinas\_full.png
+
+```
 
 
 
@@ -366,41 +512,23 @@ The repository contains generated figures for qualitative and quantitative inspe
 
 
 
-Confusion matrices are provided for the evaluated benchmark datasets.
+```text
 
+figures/
 
+├── confmat\_botswana\_full.png
 
-\### Feature Analysis
+├── confmat\_houston15\_full.png
 
+├── confmat\_indianpines\_full.png
 
+├── confmat\_ksc\_full.png
 
-The repository includes t-SNE comparisons for:
+├── confmat\_pavia\_full.png
 
+└── confmat\_salinas\_full.png
 
-
-\* Indian Pines
-
-\* Pavia University
-
-
-
-These visualizations are used to inspect feature-space separability.
-
-
-
-\### Ablation Analysis
-
-
-
-Phase 5 includes:
-
-
-
-\* Ablation heatmap
-
-\* Effect-size visualization
-
-\* Statistical comparison results
+```
 
 
 
@@ -408,23 +536,27 @@ Phase 5 includes:
 
 
 
-Phase-specific figures include:
+```text
 
+figures/
 
+├── phase1\_preprocessing\_summary.png
 
-\* Preprocessing summary
+├── phase2\_3\_fidelity\_checkpoints.png
 
-\* Fidelity checkpoints
+├── phase4\_augmentation\_effect.png
 
-\* Augmentation effects
+├── phase5\_ablation\_heatmap.png
 
-\* Houston 2013 summary
+├── phase5\_effect\_sizes.png
 
-\* Full-scene class maps
+├── phase6\_houston15\_summary.png
 
-\* Confusion matrices
+├── tsne\_comparison\_indianpines.png
 
-\* Feature-separability visualizations
+└── tsne\_comparison\_paviauniversity.png
+
+```
 
 
 
@@ -432,7 +564,7 @@ Phase-specific figures include:
 
 
 
-\## Repository Structure
+\# Repository Structure
 
 
 
@@ -464,25 +596,15 @@ QuantFormer/
 
 ├── figures/
 
-│   ├── classmap\_\*.png
+│   ├── classification maps
 
-│   ├── confmat\_\*.png
+│   ├── confusion matrices
 
-│   ├── phase1\_preprocessing\_summary.png
+│   ├── ablation plots
 
-│   ├── phase2\_3\_fidelity\_checkpoints.png
+│   ├── t-SNE visualizations
 
-│   ├── phase4\_augmentation\_effect.png
-
-│   ├── phase5\_ablation\_heatmap.png
-
-│   ├── phase5\_effect\_sizes.png
-
-│   ├── phase6\_houston15\_summary.png
-
-│   ├── tsne\_comparison\_indianpines.png
-
-│   └── tsne\_comparison\_paviauniversity.png
+│   └── experiment summaries
 
 │
 
@@ -538,15 +660,7 @@ QuantFormer/
 
 ├── phase7\_full\_metrics.json
 
-├── phase7\_separability\_results.json
-
-│
-
-├── QuantFormer\_Documentation.pdf
-
-├── .gitignore
-
-└── README.md
+└── phase7\_separability\_results.json
 
 ```
 
@@ -560,89 +674,43 @@ QuantFormer/
 
 
 
-\## Environment
-
-
-
-The experiments were developed using:
-
-
-
-\* Python 3.10
-
-\* PyTorch
-
-\* PennyLane
-
-\* NumPy
-
-\* SciPy
-
-\* scikit-learn
-
-\* Matplotlib
-
-\* Jupyter
-
-
-
-The recorded development environment used an \*\*NVIDIA RTX A4500\*\* for classical GPU computation, while the quantum component was evaluated through simulated quantum backends.
-
-
-
-\## Running the Experiments
-
-
-
-The notebooks are organized sequentially by phase.
-
-
-
-For example:
+The experiments use fixed random seeds:
 
 
 
 ```text
 
-Phase 0
+42
 
-&#x20;  ↓
+43
 
-Phase 1
-
-&#x20;  ↓
-
-Phase 2
-
-&#x20;  ↓
-
-Phase 3
-
-&#x20;  ↓
-
-Phase 4
-
-&#x20;  ↓
-
-Phase 5
-
-&#x20;  ↓
-
-Phase 6
-
-&#x20;  ↓
-
-Phase 7
+44
 
 ```
 
 
 
-Each major experiment has an associated JSON result file where applicable.
+The notebooks are organized sequentially according to the experimental phases.
 
 
 
-The original datasets must be obtained separately and placed in the appropriate local data directories. These files are intentionally excluded from version control.
+For reproduction:
+
+
+
+1\. Install the required Python dependencies.
+
+2\. Download the required hyperspectral datasets separately.
+
+3\. Place datasets according to the preprocessing notebook configuration.
+
+4\. Run the notebooks in phase order.
+
+5\. Use the saved JSON files and generated figures for result verification.
+
+
+
+The repository intentionally excludes the original datasets and large generated preprocessing files.
 
 
 
@@ -654,19 +722,15 @@ The original datasets must be obtained separately and placed in the appropriate 
 
 
 
-A detailed project document is included in:
+A complete project documentation file is included in the repository:
 
 
 
-```text
-
-QuantFormer\_Documentation.pdf
-
-```
+\*\*`QuantFormer\_Documentation.pdf`\*\*
 
 
 
-It provides the broader experimental methodology, implementation details, results, and analysis corresponding to the repository.
+It provides additional details about the experimental methodology, implementation, evaluation procedures, and results.
 
 
 
@@ -678,43 +742,19 @@ It provides the broader experimental methodology, implementation details, result
 
 
 
-Several limitations should be considered when interpreting the results:
+The current implementation has several limitations:
 
 
 
-1\. \*\*Quantum simulation\*\*
+\* Quantum experiments are performed using simulated quantum backends rather than physical quantum hardware.
 
-&#x20;  The quantum circuit is simulated rather than executed on physical quantum hardware.
+\* The evaluated datasets vary substantially in spatial and spectral characteristics.
 
+\* Inference measurements are dependent on the development hardware and software environment.
 
+\* The reported results are experimental measurements and are not presented as state-of-the-art claims.
 
-2\. \*\*Simulation cost\*\*
-
-&#x20;  Quantum simulation can become computationally expensive as circuit size and workload increase.
-
-
-
-3\. \*\*Dataset dependence\*\*
-
-&#x20;  Performance varies substantially between datasets, particularly for more challenging class distributions.
-
-
-
-4\. \*\*Limited parameter sweep\*\*
-
-&#x20;  The reported experiments use a defined architecture and configuration rather than an exhaustive hyperparameter search.
-
-
-
-5\. \*\*Benchmark-specific evaluation\*\*
-
-&#x20;  Different datasets and experimental phases use different evaluation protocols; metrics should therefore be interpreted within their corresponding experimental setup.
-
-
-
-6\. \*\*Dataset availability\*\*
-
-&#x20;  The original HSI datasets are not redistributed in this repository.
+\* Original hyperspectral datasets are not redistributed with the repository.
 
 
 
@@ -726,35 +766,35 @@ Several limitations should be considered when interpreting the results:
 
 
 
-The repository preserves more than final accuracy values. It includes:
+The project includes:
 
 
 
-\* Multi-seed benchmark results
+\* Hybrid quantum-classical Transformer implementation
 
-\* Per-class performance
+\* Multi-dataset hyperspectral classification experiments
+
+\* Reproduction experiments
+
+\* Cross-dataset evaluation
+
+\* Data augmentation analysis
+
+\* Ablation studies
+
+\* Statistical significance testing
+
+\* Full-scene classification
 
 \* Confusion matrices
 
 \* Classification maps
 
-\* Ablation results
+\* t-SNE feature-space analysis
 
-\* McNemar statistical tests
+\* Extracted quantitative artifacts
 
-\* Effect-size analysis
-
-\* t-SNE feature visualizations
-
-\* Parameter-count comparisons
-
-\* Inference-time measurements
-
-\* Extracted model artifacts
-
-
-
-This makes the repository useful not only for reproducing headline metrics but also for inspecting the behavior of the model across datasets and experimental conditions.
+\* Reproducible experiment notebooks
 
 
 
@@ -766,7 +806,7 @@ This makes the repository useful not only for reproducing headline metrics but a
 
 
 
-If you use this implementation or experimental results in academic work, please cite the repository:
+If you use this repository in academic work, please cite:
 
 
 
@@ -774,15 +814,13 @@ If you use this implementation or experimental results in academic work, please 
 
 @software{anjum2026quantformer,
 
-&#x20; author  = {Amama Anjum},
+&#x20; author  = {Anjum, Amama},
 
 &#x20; title   = {QuantFormer: Quantum-Enhanced Transformer for Hyperspectral Image Classification},
 
 &#x20; year    = {2026},
 
-&#x20; version = {1.0},
-
-&#x20; note    = {Research software repository}
+&#x20; url     = {https://github.com/Ashley-33102/QuantFormer}
 
 }
 
@@ -790,11 +828,35 @@ If you use this implementation or experimental results in academic work, please 
 
 
 
-\## Project Summary
+\---
 
 
 
-\*\*QuantFormer investigates a compact hybrid quantum-classical Transformer for hyperspectral image classification through multi-dataset benchmarking, ablation analysis, statistical testing, and full-scene evaluation.\*\*
+\## Project Status
+
+
+
+\*\*Experimental pipeline completed.\*\*
+
+
+
+The repository currently contains the implementation notebooks, evaluation results, generated figures, extracted artifacts, and project documentation for the completed experimental pipeline.
+
+
+
+\---
+
+
+
+<p align="center">
+
+
+
+\*\*QuantFormer — Hybrid Quantum-Classical Learning for Hyperspectral Image Classification\*\*
+
+
+
+</p>
 
 
 
